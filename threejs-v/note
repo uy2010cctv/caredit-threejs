@@ -1,0 +1,10 @@
+二、基本思路：
+（1）构建场景Scene->
+
+（2）通过Renderer渲染场景到画布->
+
+（3）需要借助**Camera帮忙观察物体->
+
+（4）通过loader（GLTFLoader,FBXLoader…）加载模型 ->
+
+（5）通过requestAnimationFrame 把最新场景数据渲染出来

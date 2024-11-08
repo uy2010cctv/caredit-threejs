@@ -1,0 +1,59 @@
+#info {
+	position: absolute;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;	
+	color: #fff;
+	display:block;
+}
+
+#container {
+	position: absolute;
+	width: 400px;
+	height: 16px;
+	top: 50%;
+	left:50%;
+	margin-left: -200px;
+	margin-top: -8px;
+	border-radius: 8px;           
+	border: 3px solid #ffd000;          
+	overflow: hidden;
+}
+#per {
+	height: 100%;
+	width: 0px;
+	background: #006eff;
+	color: #0062ff;
+	line-height: 15px;          
+}
+
+#selector {
+    display: none;
+    flex-direction: row; /* 将方向改为行排列 */
+    justify-content: center; /* 居中对齐 */
+    align-items: center; /* 垂直居中 */
+    position: fixed; /* 固定定位 */
+    bottom: 0; /* 底部对齐 */
+    left: 0; /* 左侧对齐 */
+    width: 100%; /* 宽度设置为100% */
+    height: auto; /* 高度自动 */
+    overflow-x: auto; /* 水平滚动 */
+    padding: 10px 0; /* 底部和顶部的内边距 */
+    background: rgba(43, 43, 43, 0.9); /* 背景色，透明度 */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* 底部阴影 */
+    z-index: 1000; /* 确保在最上层 */
+}
+
+#selector .img {
+    width: 100px; /* 宽度设置为10px */
+    height: 100px; /* 高度设置为10px */
+    padding: 0; /* 移除内边距 */
+    margin: 0 5px; /* 保留外边距 */
+    border: 1px solid #f8f8f8; /* 边框样式 */
+    border-radius: 10px; /* 圆角 */
+}
+
+#selector .img.active {
+    border: 2px solid #26fff4; /* 激活状态的边框样式 */
+}
