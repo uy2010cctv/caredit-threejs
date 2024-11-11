@@ -300,7 +300,6 @@ function inti() {
     imgDom.id = 'de';
     imgs.push(imgDom);
     imgDom.onclick = () => {
-      console.log('decalTexture',decalTextures[index].image.width);
       imgs.forEach(item => item.classList.remove('active'));
       if (selectedIndex === index) {
         selectedIndex = -1;
@@ -315,7 +314,8 @@ function inti() {
   selectorContainer.append(list);
 
   const gui = new GUI();
-  const colerFolder = gui.addFolder('Modify material');
+  const colerFolder = gui.addFolder('Modify material 颜色材质');
+  colerFolder.close();
   colerFolder.add(editmode, 'coloredit');
   colerFolder.addColor(obj, 'color').onChange(function (value) {
       car.children.forEach(child => {
@@ -374,7 +374,8 @@ const colerFolder6 = colerFolder2.add(selectpart,'metalness', 0, 1).onChange( fu
 
 
 
-const decalsFolder = gui.addFolder('Decals System (demo)');
+const decalsFolder = gui.addFolder('Decals System 贴纸系统 (demo)');
+decalsFolder.close();
 decalsFolder.add(editmode, 'decalsedit').onChange(function(value) {
   if(editmode.decalsedit === true){
     document.getElementById("selector").style.display = 'flex';
@@ -430,26 +431,56 @@ function createdecal(geometry, material) {
   return mesh;
 }
 
+
+function setcameray() {    
+  camera.rotation.set(0, 1.5, 0);
+  camera.position.set(11, 0, 0.6);
+}
+
+function setcameray2() {    
+  camera.rotation.set(-3.14, -1.5, -3.14);
+  camera.position.set(-11, 0, -0.6);
+}
+
+function setcamerax() {    
+  camera.rotation.set(-0.27, 0.007, 0.002);
+  camera.position.set(0.09, 3.2, 11.5);
+}
+
+function setcamerax2() {    
+  camera.rotation.set(-2.92, -0.01, -3.13);
+  camera.position.set(-0.13, 2.6, -11.35);
+}
+let button = document.getElementById('rotateButtony');
+let button2 = document.getElementById('rotateButtony2');
+let button3 = document.getElementById('rotateButtonx');
+let button4 = document.getElementById('rotateButtonx2');
+// 添加点击事件监听器
+button.addEventListener('click', setcameray);
+button2.addEventListener('click', setcameray2);
+button3.addEventListener('click', setcamerax);
+button4.addEventListener('click', setcamerax2);
+
+ 
 function addDecal() {
   //position.copy( intersection.point );
   position.z = intersection.point.z;
   position.y = intersection.point.y;
   position.x = intersection.point.x;
   orientation.copy( camera.rotation );
-  //console.log('orientation',mouseHelper.rotation);
-  //const scale = params.minScale + Math.random() * ( params.maxScale - params.minScale );
+  console.log('camera.rotation', camera.rotation);
+  console.log('camera.position', camera.position);
   const material1 = decalMaterial.clone();
-  //size.set( decalsparams.Scale, decalsparams.Scale, decalsparams.Scale);
   if (selectedIndex >= 0) {
     index = selectedIndex;
   }
   material1.map = decalTextures[index];
   let aspectRatio = material1.map.image.width / material1.map.image.height;
-  size.set( aspectRatio * decalsparams.Scale, decalsparams.Scale, decalsparams.Scale);
-  console.log('size', size);
+  size.set( decalsparams.Scale, decalsparams.Scale/aspectRatio, decalsparams.Scale);
+
 try {
   const decal1 = new DecalGeometry( select.object, position, orientation, size )
-  //console.log('decals1', decal1);
+
 
   const m = new createdecal(decal1, material1 );
   m.renderOrder = decals.length; // give decals a fixed render order
