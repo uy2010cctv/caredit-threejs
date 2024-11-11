@@ -47,7 +47,7 @@
 
 
 #selector .img {
-    width: 100px; /* 宽度设置为10px */
+    width: auto; /* 宽度设置为10px */
     height: 100px; /* 高度设置为10px */
     padding: 0; /* 移除内边距 */
     margin: 0 5px; /* 保留外边距 */

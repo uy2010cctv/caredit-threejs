@@ -300,6 +300,7 @@ function inti() {
     imgDom.id = 'de';
     imgs.push(imgDom);
     imgDom.onclick = () => {
+      console.log('decalTexture',decalTextures[index].image.width);
       imgs.forEach(item => item.classList.remove('active'));
       if (selectedIndex === index) {
         selectedIndex = -1;
@@ -308,7 +309,6 @@ function inti() {
       selectedIndex = index;
       imgDom.classList.add('active');
     };
-    console.log('add list');
     list.appendChild(imgDom);
   });
 
@@ -439,11 +439,14 @@ function addDecal() {
   //console.log('orientation',mouseHelper.rotation);
   //const scale = params.minScale + Math.random() * ( params.maxScale - params.minScale );
   const material1 = decalMaterial.clone();
-  size.set( decalsparams.Scale, decalsparams.Scale, decalsparams.Scale);
+  //size.set( decalsparams.Scale, decalsparams.Scale, decalsparams.Scale);
   if (selectedIndex >= 0) {
     index = selectedIndex;
   }
   material1.map = decalTextures[index];
+  let aspectRatio = material1.map.image.width / material1.map.image.height;
+  size.set( aspectRatio * decalsparams.Scale, decalsparams.Scale, decalsparams.Scale);
+  console.log('size', size);
 try {
   const decal1 = new DecalGeometry( select.object, position, orientation, size )
   //console.log('decals1', decal1);
@@ -455,7 +458,7 @@ try {
 
   select.object.attach( m );
 } catch (error) {
-  console.log('未选中目标');
+  //console.log('未选中目标');
 }
 }
 
@@ -468,7 +471,7 @@ function onWindowResize() {
   renderer.setSize( window.innerWidth, window.innerHeight );
 
 }
-
+//upload decal texture--------------------------------------------------------------------
 function updateDecalTextures() {
   decalTextures = decalTextureUrls.map(url => {
     return textureLoader.load(url);
@@ -495,10 +498,10 @@ function updatePageElements() {
       selectedIndex = index;
       imgs[index].classList.add('active');
     };
-    console.log('add list');
+    //console.log('add list');
     list.appendChild(imgDom);
   });
-  console.log('decalTextureUrls:',decalTextureUrls);
+ // console.log('decalTextureUrls:',decalTextureUrls);
   selectorContainer.innerHTML = '';
   selectorContainer.append(list);
 }
@@ -531,7 +534,7 @@ document.getElementById('fileInput').addEventListener('change', function() {
       alert('Please select a PNG image file to upload.');
   }
 });
-
+//---------------------------------------------------------------------------------
 var render = function () {
   requestAnimationFrame( render );
   stats.update();
