@@ -45,15 +45,60 @@
     z-index: 1000; /* 确保在最上层 */
 }
 
+
 #selector .img {
     width: 100px; /* 宽度设置为10px */
     height: 100px; /* 高度设置为10px */
     padding: 0; /* 移除内边距 */
     margin: 0 5px; /* 保留外边距 */
-    border: 1px solid #f8f8f8; /* 边框样式 */
+    border: 10px solid #f8f8f862; /* 边框样式 */
     border-radius: 10px; /* 圆角 */
 }
 
 #selector .img.active {
-    border: 2px solid #26fff4; /* 激活状态的边框样式 */
+    border: 7px solid #26fff4; /* 激活状态的边框样式 */
+}
+
+.options-container{
+    display: none;
+    flex-direction: row; /* 将方向改为行排列 */
+    justify-content: left; /* 左对齐 */
+    align-items: center; /* 垂直居中 */
+    position: fixed; /* 固定定位 */
+    bottom: 180px;
+    left: 0; /* 左侧对齐 */
+    width: auto; /* 宽度设置为100% */
+    height: auto; /* 高度自动 */
+    overflow-x: auto; /* 水平滚动 */
+    padding: 1px 0; /* 底部和顶部的内边距 */
+    background: rgba(43, 43, 43, 0.9); /* 背景色，透明度 */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* 底部阴影 */
+    z-index: 1000; /* 确保在最上层 */
+
+}
+.upload-container {
+    flex-direction: row; /* 将方向改为行排列 */
+    overflow-x: auto; /* 水平滚动 */
+    padding: 10px 0; /* 底部和顶部的内边距 */
+
+}
+
+.upload-container input[type="file"] {
+    display: none;
+	opacity: 0; /* 设定透明度为0，使元素不可见 */
+	cursor: pointer; /* 设置指针作为鼠标形状，提示用户可以点击 */
+	z-index: 2; 
+}
+
+.upload-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.upload-container span {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-top: 10px;
 }

@@ -50,6 +50,11 @@ const editmode = {
   decalsedit: false,
   coloredit: true,
 };
+
+const selectorContainer = document.getElementById('selector');
+const list = document.createDocumentFragment();
+const imgs = [];
+
 const decalsparams = {
   Scale: 0.25,
 };
@@ -59,10 +64,9 @@ const decalTextureUrls = [
   'decals/dogs.png',
   'decals/logo-tiger 1.png',
   ];
-  const textureLoader = new THREE.TextureLoader();
-  const decalTextures = decalTextureUrls.map(url => {
-   return textureLoader.load(url);
-  });
+const textureLoader = new THREE.TextureLoader();
+let decalTextures = [];
+updateDecalTextures();
 
 const decalMaterial = new THREE.MeshBasicMaterial({
   //specular: 0x444444,
@@ -209,7 +213,7 @@ function inti() {
       if(editmode.decalsedit === true){
       addDecal();
       console.log('decals', decals);
-      console.log('select', select.object);
+      //console.log('select', select.object);
     }
     updateGUI()
     try {
@@ -288,14 +292,12 @@ function inti() {
     
   }
 //GUI-----------------------------------------------------
-  const selectorContainer = document.getElementById('selector');
-  const list = document.createDocumentFragment();
-  const imgs = [];
+
   decalTextureUrls.forEach((item, index) => {
     const imgDom = document.createElement('img');
     imgDom.classList.add('img');
     imgDom.src = item;
-    imgDom.loading = 'lazy';
+    imgDom.id = 'de';
     imgs.push(imgDom);
     imgDom.onclick = () => {
       imgs.forEach(item => item.classList.remove('active'));
@@ -304,7 +306,7 @@ function inti() {
         return;
       }
       selectedIndex = index;
-      imgs[index].classList.add('active');
+      imgDom.classList.add('active');
     };
     console.log('add list');
     list.appendChild(imgDom);
@@ -340,11 +342,14 @@ colerFolder.add(obj, 'metalness', 0, 1).onChange(function(value) {
         child.material.metalness = value;
       }})
 });
+
 function updateGUI() {
+  try{
   colerFolder4.setValue(select.object.name);
   colerFolder3.setValue(select.object.material.color.getHex().toString(16));
   colerFolder5.setValue(select.object.material.roughness );
-  colerFolder6.setValue(select.object.material.metalness);
+  colerFolder6.setValue(select.object.material.metalness);} catch (error) {
+      }
 }
 const colerFolder2 = colerFolder.addFolder('Part Modify');
 const colerFolder4 = colerFolder2.add(selectpart, 'name');
@@ -373,8 +378,10 @@ const decalsFolder = gui.addFolder('Decals System (demo)');
 decalsFolder.add(editmode, 'decalsedit').onChange(function(value) {
   if(editmode.decalsedit === true){
     document.getElementById("selector").style.display = 'flex';
+    document.querySelector(".options-container").style.display = 'flex';
     }else{  
       document.getElementById("selector").style.display = 'none';  
+      document.querySelector(".options-container").style.display = 'none'; 
     }  
 });
 decalsFolder.add(decalsparams,'Scale', 0, 1);
@@ -461,6 +468,69 @@ function onWindowResize() {
   renderer.setSize( window.innerWidth, window.innerHeight );
 
 }
+
+function updateDecalTextures() {
+  decalTextures = decalTextureUrls.map(url => {
+    return textureLoader.load(url);
+  });
+}
+
+function updatePageElements() {
+  updateDecalTextures();
+  imgs.length = 0;
+  // 重新遍历decalTextureUrls数组
+  decalTextureUrls.forEach((item, index) => {
+    const imgDom = document.createElement('img');
+    imgDom.classList.add('img');
+    imgDom.src = item;
+    imgDom.id = 'de';
+    imgs.push(imgDom);
+    imgDom.onclick = () => {
+      //debugger
+      imgs.forEach(item => item.classList.remove('active'));
+      if (selectedIndex === index) {
+        selectedIndex = -1;
+        return;
+      }
+      selectedIndex = index;
+      imgs[index].classList.add('active');
+    };
+    console.log('add list');
+    list.appendChild(imgDom);
+  });
+  console.log('decalTextureUrls:',decalTextureUrls);
+  selectorContainer.innerHTML = '';
+  selectorContainer.append(list);
+}
+
+document.querySelector('.upload-container').addEventListener('click', function(event) {
+  if (event.target.classList.contains('upload-icon')) {
+      document.getElementById('fileInput').click();
+  }
+});
+
+document.getElementById('fileInput').addEventListener('change', function() {
+  
+  const file = this.files[0];
+
+  if (file && file.type === 'image/png') {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+          const imageUrl = e.target.result;
+          //const imageArray = JSON.parse(sessionStorage.getItem('images')) || [];
+          let imageArray = [];
+          imageArray.push(imageUrl);
+          //sessionStorage.setItem('images', JSON.stringify(imageArray));
+          decalTextureUrls.push(imageArray[imageArray.length - 1]);
+        
+          updatePageElements();
+      };
+
+      reader.readAsDataURL(file);
+  } else {
+      alert('Please select a PNG image file to upload.');
+  }
+});
 
 var render = function () {
   requestAnimationFrame( render );
