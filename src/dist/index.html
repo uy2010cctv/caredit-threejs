@@ -11,13 +11,22 @@
             }
 
             footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
+            flex-direction: row; /* 将方向改为行排列 */
+            justify-content: center; /* 居中对齐 */
+            align-items: center; /* 垂直居中 */
+            position: fixed; /* 固定定位 */
+            top: 0; /* 底部对齐 */
+            left: 0; /* 左侧对齐 */
+            width: 100%; /* 宽度设置为100% */
+            height: auto; /* 高度自动 */
+            overflow-x: auto; /* 水平滚动 */
+            padding: 10px 0; /* 底部和顶部的内边距 */
+            background: rgba(43, 43, 43, 0); /* 背景色，透明度 */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* 底部阴影 */
+            z-index: 1000; /* 确保在最上层 */
             }
         </style>
-      <script type="module" crossorigin src="/assets/index-DE_j9ajN.js"></script>
+      <script type="module" crossorigin src="/assets/index-B5Dh5GUQ.js"></script>
       <link rel="stylesheet" crossorigin href="/assets/index-B1XimK_E.css">
     </head>    
     <body> 
@@ -25,7 +34,7 @@
             <!-- 进度条 -->
             <div id="per"> </div>
         </div>
-        <footer>Version：2.0V rebuild by Threejs --Kris</footer>
+        <footer>Version：2.1 -- Created by: roartale</footer>
         <div class="options-container">
             <div class="upload-container">
             <input type="file" id="fileInput" accept="image/png" />

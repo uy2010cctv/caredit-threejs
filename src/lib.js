@@ -53,3 +53,40 @@ THREE.ModelAutoCenter =function(group){
 }
 
 export default THREE;
+
+            /*<button class="button button-3d button-box button-jumbo" style="font-size: 14px;background-color:aqua;width: 30px;height: 30px;line-height: 30px;border-radius:6px;box-shadow:0 7px 0 #03cfc8, 0 8px 3px rgba(0, 0, 0, 0.2)"  id="rotateButtony">y1</button>
+            <button class="button button-3d button-box button-jumbo" style="font-size: 14px;background-color:aqua;width: 30px;height: 30px;line-height: 30px;border-radius:6px;box-shadow:0 7px 0 #03cfc8, 0 8px 3px rgba(0, 0, 0, 0.2)" id="rotateButtony2">y2</button>
+            <button class="button button-3d button-box button-jumbo" style="font-size: 14px;background-color:aqua;width: 30px;height: 30px;line-height: 30px;border-radius:6px;box-shadow:0 7px 0 #03cfc8, 0 8px 3px rgba(0, 0, 0, 0.2)" id="rotateButtonx">x1</button>
+            <button class="button button-3d button-box button-jumbo" style="font-size: 14px;background-color:aqua;width: 30px;height: 30px;line-height: 30px;border-radius:6px;box-shadow:0 7px 0 #03cfc8, 0 8px 3px rgba(0, 0, 0, 0.2)" id="rotateButtonx2">x2</button>
+
+			
+let t1 = gsap.timeline();
+//const clock = new THREE.Clock();
+function setcameray() {    
+  //camera.rotation.set(0, 1.5, 0);
+  t1.to(camera.position,{x:11, y:0, z:0.6,  duration:2})
+
+}
+function setcameray2() {    
+  camera.rotation.set(-3.14, -1.5, -3.14);
+  camera.position.set(-11, 0, -0.6);
+}
+
+function setcamerax() {    
+  camera.rotation.set(-0.27, 0.007, 0.002);
+  camera.position.set(0.09, 3.2, 11.5);
+}
+
+function setcamerax2() {    
+  camera.rotation.set(-2.92, -0.01, -3.13);
+  camera.position.set(-0.13, 2.6, -11.35);
+}
+let button = document.getElementById('rotateButtony');
+let button2 = document.getElementById('rotateButtony2');
+let button3 = document.getElementById('rotateButtonx');
+let button4 = document.getElementById('rotateButtonx2');
+// 添加点击事件监听器
+button.addEventListener('click', setcameray);
+button2.addEventListener('click', setcameray2);
+button3.addEventListener('click', setcamerax);
+button4.addEventListener('click', setcamerax2);
