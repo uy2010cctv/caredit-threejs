@@ -123,14 +123,13 @@
     padding: 10px 0; /* 底部和顶部的内边距 */
     background: rgba(43, 43, 43, 0.9); /* 背景色，透明度 */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* 底部阴影 */
-    z-index: 1000; /* 确保在最上层 */
+    z-index: 1003; /* 确保在最上层 */
 }
 #decalslist::-webkit-scrollbar {
     display: none;
   }
 
-
-#decalslist .li {
+  #decalslist .li {
     display: flex;
     align-items: center;
     justify-content: center; 
@@ -141,6 +140,14 @@
     border: 5px solid #f8f8f862; /* 边框样式 */
     border-radius: 3px; /* 圆角 */
     color: #fff;
+}
+#decalslist li img {
+    width: 30px; /* 宽度设置为10px */
+    height: 30px; /* 高度设置为10px */
+    padding: 0; /* 移除内边距 */
+    margin: 0 5px; /* 保留外边距 */
+    border: 2px solid #f8f8f862; /* 边框样式 */
+    border-radius: 5px; /* 圆角 */
 }
 
 #decalslist .li.active {

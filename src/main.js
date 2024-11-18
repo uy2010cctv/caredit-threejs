@@ -438,8 +438,6 @@ try {
   Decalslist();
   select.object.attach( m );
   console.log('de', decals);
-  console.log('select', select.object.children);
-
 } catch (error) {
   //console.log('未选中目标');
 }
@@ -461,12 +459,23 @@ function Decalslist(){
       }
     });
     des.push(deDom);
+    const decalsimg = document.createElement('img');
+    decalsimg.src = item.material.map.image.src;
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.addEventListener('click', () => {
-
+      car.children.forEach(child => {
+        child.children.forEach(decal4 => {
+          if (decal4.name === item.name) {
+          console.log('decal', decal4);
+          decals.splice(decals.indexOf(item), 1);
+          child.remove(decal4);
+          }
+        });
+      });
       Decalslist();
     });
+    deDom.appendChild(decalsimg);
     deDom.appendChild(deleteBtn);
     listde.appendChild(deDom);
   });
