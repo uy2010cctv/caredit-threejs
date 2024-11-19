@@ -9,6 +9,7 @@ import Stats from 'three/addons/libs/stats.module.js';
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 
 
+
 let renderer, camera;
 let line;
 let stats;
@@ -70,7 +71,7 @@ const textureLoader = new THREE.TextureLoader();
 let decalTextures = [];
 updateDecalTextures();
 
-const decalMaterial = new THREE.MeshBasicMaterial({
+const decalMaterial = new THREE.MeshPhongMaterial({
   transparent: true,
   depthTest: true,
   depthWrite: false,
@@ -111,7 +112,6 @@ function inti() {
   scene.environment.mapping = THREE.EquirectangularReflectionMapping;
   scene.environment.colorSpace = THREE.SRGBColorSpace;
   
-  scene.fog = new THREE.Fog(0x000000,3,20);
   scene.background = new THREE.Color(0x000000);
 
   camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -130,7 +130,8 @@ function inti() {
   const geometry = new THREE.BufferGeometry();
 
 	geometry.setFromPoints( [ new THREE.Vector3(), new THREE.Vector3() ] );
-  line = new THREE.Line( geometry, new THREE.LineBasicMaterial({color:0xff0000}) );
+  line = new THREE.Line( geometry, new THREE.LineBasicMaterial({color:0xff0000,transparent: true, // 设置材质为透明
+  opacity: 0}) );
   scene.add( line );
 
   loadModel();
@@ -162,12 +163,11 @@ function inti() {
 
 
   mouseHelper = new THREE.Mesh(new THREE.TetrahedronGeometry(0.01, 0), new THREE.MeshNormalMaterial());
-  //mouseHelper.visible = false;
+  mouseHelper.visible = false;
   scene.add(mouseHelper);
 
   // 鼠标交互
-  line = new THREE.Line(geometry, new THREE.LineBasicMaterial());
-  scene.add(line);
+
 
 
 
@@ -367,7 +367,7 @@ decalsFolder.add(editmode, 'decalsedit').onChange(function(value) {
       document.querySelector(".options-container").style.display = 'none'; 
     }  
 });
-decalsFolder.add(decalsparams,'Scale', 0, 1);
+decalsFolder.add(decalsparams,'Scale', 0, 2);
 
   gui.open();
   //
@@ -418,7 +418,8 @@ function addDecal() {
   position.z = intersection.point.z;
   position.y = intersection.point.y;
   position.x = intersection.point.x;
-  orientation.copy( camera.rotation );  
+  orientation.copy( camera.rotation ); 
+  //orientation.copy( mouseHelper.rotation ); 
   const material1 = decalMaterial.clone();
   if (selectedIndex >= 0) {
     index = selectedIndex;
@@ -437,7 +438,6 @@ try {
   decals.push( m );
   Decalslist();
   select.object.attach( m );
-  console.log('de', decals);
 } catch (error) {
   //console.log('未选中目标');
 }
@@ -456,6 +456,7 @@ function Decalslist(){
         deDom.classList.remove('active');
       } else {
         deDom.classList.add('active');
+        console.log('点击贴纸', item);
       }
     });
     des.push(deDom);
@@ -467,9 +468,9 @@ function Decalslist(){
       car.children.forEach(child => {
         child.children.forEach(decal4 => {
           if (decal4.name === item.name) {
-          console.log('decal', decal4);
           decals.splice(decals.indexOf(item), 1);
           child.remove(decal4);
+          console.log('de', decal4);
           }
         });
       });

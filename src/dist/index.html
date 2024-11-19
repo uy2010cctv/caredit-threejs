@@ -11,14 +11,14 @@
             }
 
             footer {
-            flex-direction: row; /* 将方向改为行排列 */
-            justify-content: center; /* 居中对齐 */
-            align-items: center; /* 垂直居中 */
-            position: fixed; /* 固定定位 */
-            top: 0; /* 底部对齐 */
-            left: 0; /* 左侧对齐 */
+            display: flex; 
+            flex-direction: row; 
+            justify-content: center; 
+            position: fixed; 
+            align-items: center;
             width: 100%; /* 宽度设置为100% */
             height: auto; /* 高度自动 */
+            color: #ffffff;
             overflow-x: auto; /* 水平滚动 */
             padding: 10px 0; /* 底部和顶部的内边距 */
             background: rgba(43, 43, 43, 0); /* 背景色，透明度 */
@@ -26,27 +26,25 @@
             z-index: 1000; /* 确保在最上层 */
             }
         </style>
-      <script type="module" crossorigin src="/assets/index-B5Dh5GUQ.js"></script>
-      <link rel="stylesheet" crossorigin href="/assets/index-B1XimK_E.css">
+      <script type="module" crossorigin src="/assets/index-BO8s5Pzm.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-BMCwtGuv.css">
     </head>    
     <body> 
         <div id ="container">
             <!-- 进度条 -->
             <div id="per"> </div>
         </div>
-        <footer>Version：2.1 -- Created by: roartale</footer>
+        <footer>Version：2.2 -- Created by Roartale</footer>
         <div class="options-container">
             <div class="upload-container">
             <input type="file" id="fileInput" accept="image/png" />
             <img src="https://img.icons8.com/?size=100&id=4g7IQ4lwGBZg&format=png&color=00ffff" alt="Upload Image" class="upload-icon" />
             </div>
-            <button class="button button-3d button-box button-jumbo" style="font-size: 14px;background-color:aqua;width: 30px;height: 30px;line-height: 30px;border-radius:6px;box-shadow:0 7px 0 #03cfc8, 0 8px 3px rgba(0, 0, 0, 0.2)"  id="rotateButtony">y1</button>
-            <button class="button button-3d button-box button-jumbo" style="font-size: 14px;background-color:aqua;width: 30px;height: 30px;line-height: 30px;border-radius:6px;box-shadow:0 7px 0 #03cfc8, 0 8px 3px rgba(0, 0, 0, 0.2)" id="rotateButtony2">y2</button>
-            <button class="button button-3d button-box button-jumbo" style="font-size: 14px;background-color:aqua;width: 30px;height: 30px;line-height: 30px;border-radius:6px;box-shadow:0 7px 0 #03cfc8, 0 8px 3px rgba(0, 0, 0, 0.2)" id="rotateButtonx">x1</button>
-            <button class="button button-3d button-box button-jumbo" style="font-size: 14px;background-color:aqua;width: 30px;height: 30px;line-height: 30px;border-radius:6px;box-shadow:0 7px 0 #03cfc8, 0 8px 3px rgba(0, 0, 0, 0.2)" id="rotateButtonx2">x2</button>
         </div>
         <div id="selector"> 
 
+        </div>
+        <div id="decalslist">
         </div>    
     </body>    
 </html>
