@@ -559,7 +559,7 @@ document.getElementById('fileInput').addEventListener('change', function() {
 });
 //---------------------------------------------------------------------------------
 var render = function () {
-  camera.updateProjectionMatrix();
+  //camera.updateProjectionMatrix();
   requestAnimationFrame( render );
   stats.update();
   renderer.render(scene, camera);

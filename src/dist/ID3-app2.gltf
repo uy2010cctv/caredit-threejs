@@ -742,7 +742,7 @@
 		},
 		{
 			"mesh":30,
-			"name":"Obj3d66-1410836-31-805.001",
+			"name":"K22",
 			"rotation":[
 				-0.0011752317659556866,
 				0.7077485918998718,
@@ -1955,7 +1955,7 @@
 				0.001596638816408813
 			],
 			"translation":[
-				-0.00017039477825164795,
+				-0.0021375231444835663,
 				0.012968003749847412,
 				-0.1234414353966713
 			]
@@ -1995,7 +1995,7 @@
 				0.001596638816408813
 			],
 			"translation":[
-				-0.00017039477825164795,
+				-1.9089109897613525,
 				0.012968003749847412,
 				-0.1234414353966713
 			]
@@ -2062,7 +2062,7 @@
 		},
 		{
 			"mesh":96,
-			"name":"Obj3d66-1410836-98-599.001",
+			"name":"K23",
 			"rotation":[
 				-0.0011752317659556866,
 				0.7077485918998718,
@@ -2082,7 +2082,7 @@
 		},
 		{
 			"mesh":97,
-			"name":"Obj3d66-1410836-99-583.001",
+			"name":"K20",
 			"rotation":[
 				-0.0011752317659556866,
 				0.7077485918998718,
@@ -2202,7 +2202,7 @@
 		},
 		{
 			"mesh":103,
-			"name":"Obj3d66-1410836-105-849.001",
+			"name":"K21",
 			"rotation":[
 				-0.0011752317659556866,
 				0.7077485918998718,
@@ -2222,7 +2222,7 @@
 		},
 		{
 			"mesh":104,
-			"name":"Obj3d66-1410836-106-629.001",
+			"name":"K25",
 			"rotation":[
 				-0.0011752317659556866,
 				0.7077485918998718,
@@ -2302,7 +2302,7 @@
 		},
 		{
 			"mesh":108,
-			"name":"Obj3d66-1410836-110-474.001",
+			"name":"K24",
 			"rotation":[
 				-0.0011752317659556866,
 				0.7077485918998718,
@@ -2686,7 +2686,7 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"Piano Black",
+			"name":"Piano Black.009",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					0,
@@ -2710,6 +2710,20 @@
 				],
 				"metallicFactor":0,
 				"roughnessFactor":0
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Piano Black",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.08636362850666046
 			}
 		},
 		{
@@ -2816,6 +2830,34 @@
 		},
 		{
 			"doubleSided":true,
+			"name":"Piano Black.004",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.08636362850666046
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Piano Black.007",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.08636362850666046
+			}
+		},
+		{
+			"doubleSided":true,
 			"name":"Carpaint Matte Grey Blue.001",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
@@ -2843,6 +2885,19 @@
 		},
 		{
 			"doubleSided":true,
+			"name":"\u6750\u8d28.007",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.5281890630722046,
+					0.5281890630722046,
+					0.5281890630722046,
+					1
+				],
+				"roughnessFactor":0.3545454740524292
+			}
+		},
+		{
+			"doubleSided":true,
 			"name":"\u6750\u8d28.004",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
@@ -2857,22 +2912,6 @@
 		},
 		{
 			"doubleSided":true,
-			"extensions":{
-				"KHR_materials_transmission":{
-					"transmissionFactor":1
-				},
-				"KHR_materials_ior":{
-					"ior":1.4500000476837158
-				}
-			},
-			"name":"\u6750\u8d28.007",
-			"pbrMetallicRoughness":{
-				"metallicFactor":0,
-				"roughnessFactor":0
-			}
-		},
-		{
-			"doubleSided":true,
 			"name":"Tire",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
@@ -2882,7 +2921,7 @@
 					1
 				],
 				"metallicFactor":0.20000000298023224,
-				"roughnessFactor":0.800000011920929
+				"roughnessFactor":0.3636363744735718
 			}
 		},
 		{
@@ -2901,13 +2940,28 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"\u6750\u8d28.016",
+			"name":"Carpaint Matte Grey Blue.002",
 			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":0
-				},
-				"metallicFactor":0,
-				"roughnessFactor":0
+				"baseColorFactor":[
+					0.5281890630722046,
+					0.5281890630722046,
+					0.5281890630722046,
+					1
+				],
+				"roughnessFactor":0.3545454740524292
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Carpaint Matte Grey Blue.003",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.5281890630722046,
+					0.5281890630722046,
+					0.5281890630722046,
+					1
+				],
+				"roughnessFactor":0.3545454740524292
 			}
 		},
 		{
@@ -3000,18 +3054,16 @@
 		},
 		{
 			"doubleSided":true,
-			"extensions":{
-				"KHR_materials_transmission":{
-					"transmissionFactor":1
-				},
-				"KHR_materials_ior":{
-					"ior":1.4500000476837158
-				}
-			},
-			"name":"\u6750\u8d28.008",
+			"name":"Piano Black.008",
 			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
+				],
 				"metallicFactor":0,
-				"roughnessFactor":0
+				"roughnessFactor":0.08636362850666046
 			}
 		},
 		{
@@ -3039,6 +3091,33 @@
 				],
 				"metallicFactor":0,
 				"roughnessFactor":0.029999999329447746
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Piano Black.003",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.08636362850666046
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Carpaint Matte Grey Blue.004",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.5281890630722046,
+					0.5281890630722046,
+					0.5281890630722046,
+					1
+				],
+				"roughnessFactor":0.3545454740524292
 			}
 		},
 		{
@@ -3113,6 +3192,34 @@
 		},
 		{
 			"doubleSided":true,
+			"name":"Piano Black.002",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.08636362850666046
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Piano Black.006",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.08636362850666046
+			}
+		},
+		{
+			"doubleSided":true,
 			"name":"bodycolor.009",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
@@ -3142,6 +3249,20 @@
 		{
 			"doubleSided":true,
 			"name":"Piano Black.001",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.08636362850666046
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Piano Black.005",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					0,
@@ -3479,7 +3600,7 @@
 						"TEXCOORD_0":84
 					},
 					"indices":85,
-					"material":6
+					"material":8
 				},
 				{
 					"attributes":{
@@ -3488,7 +3609,7 @@
 						"TEXCOORD_0":88
 					},
 					"indices":89,
-					"material":8
+					"material":9
 				}
 			]
 		},
@@ -3502,7 +3623,7 @@
 						"TEXCOORD_0":92
 					},
 					"indices":93,
-					"material":9
+					"material":10
 				}
 			]
 		},
@@ -3516,7 +3637,7 @@
 						"TEXCOORD_0":96
 					},
 					"indices":97,
-					"material":9
+					"material":10
 				}
 			]
 		},
@@ -3544,7 +3665,7 @@
 						"TEXCOORD_0":104
 					},
 					"indices":105,
-					"material":10
+					"material":11
 				}
 			]
 		},
@@ -3558,7 +3679,7 @@
 						"TEXCOORD_0":108
 					},
 					"indices":109,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -3586,7 +3707,7 @@
 						"TEXCOORD_0":116
 					},
 					"indices":117,
-					"material":11
+					"material":12
 				}
 			]
 		},
@@ -3614,7 +3735,7 @@
 						"TEXCOORD_0":124
 					},
 					"indices":125,
-					"material":12
+					"material":13
 				}
 			]
 		},
@@ -3642,7 +3763,7 @@
 						"TEXCOORD_0":132
 					},
 					"indices":133,
-					"material":6
+					"material":14
 				}
 			]
 		},
@@ -3670,7 +3791,7 @@
 						"TEXCOORD_0":140
 					},
 					"indices":141,
-					"material":6
+					"material":15
 				}
 			]
 		},
@@ -3684,7 +3805,7 @@
 						"TEXCOORD_0":144
 					},
 					"indices":145,
-					"material":13
+					"material":16
 				}
 			]
 		},
@@ -3698,7 +3819,7 @@
 						"TEXCOORD_0":148
 					},
 					"indices":149,
-					"material":13
+					"material":16
 				}
 			]
 		},
@@ -3712,7 +3833,7 @@
 						"TEXCOORD_0":152
 					},
 					"indices":153,
-					"material":14
+					"material":17
 				}
 			]
 		},
@@ -3726,7 +3847,7 @@
 						"TEXCOORD_0":156
 					},
 					"indices":157,
-					"material":9
+					"material":18
 				}
 			]
 		},
@@ -3740,7 +3861,7 @@
 						"TEXCOORD_0":160
 					},
 					"indices":161,
-					"material":9
+					"material":18
 				}
 			]
 		},
@@ -3754,7 +3875,7 @@
 						"TEXCOORD_0":164
 					},
 					"indices":165,
-					"material":9
+					"material":10
 				}
 			]
 		},
@@ -3768,7 +3889,7 @@
 						"TEXCOORD_0":168
 					},
 					"indices":169,
-					"material":13
+					"material":16
 				},
 				{
 					"attributes":{
@@ -3777,7 +3898,7 @@
 						"TEXCOORD_0":172
 					},
 					"indices":173,
-					"material":15
+					"material":19
 				},
 				{
 					"attributes":{
@@ -3786,7 +3907,7 @@
 						"TEXCOORD_0":176
 					},
 					"indices":177,
-					"material":10
+					"material":11
 				}
 			]
 		},
@@ -3800,7 +3921,7 @@
 						"TEXCOORD_0":180
 					},
 					"indices":181,
-					"material":16
+					"material":18
 				}
 			]
 		},
@@ -3814,7 +3935,7 @@
 						"TEXCOORD_0":184
 					},
 					"indices":185,
-					"material":9
+					"material":10
 				}
 			]
 		},
@@ -3828,7 +3949,7 @@
 						"TEXCOORD_0":188
 					},
 					"indices":189,
-					"material":8
+					"material":9
 				}
 			]
 		},
@@ -3870,7 +3991,7 @@
 						"TEXCOORD_0":200
 					},
 					"indices":201,
-					"material":8
+					"material":9
 				},
 				{
 					"attributes":{
@@ -3879,7 +4000,7 @@
 						"TEXCOORD_0":204
 					},
 					"indices":205,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -3907,7 +4028,7 @@
 						"TEXCOORD_0":212
 					},
 					"indices":213,
-					"material":17
+					"material":20
 				},
 				{
 					"attributes":{
@@ -3916,7 +4037,7 @@
 						"TEXCOORD_0":216
 					},
 					"indices":217,
-					"material":17
+					"material":20
 				}
 			]
 		},
@@ -3930,7 +4051,7 @@
 						"TEXCOORD_0":220
 					},
 					"indices":221,
-					"material":18
+					"material":21
 				}
 			]
 		},
@@ -3967,7 +4088,7 @@
 						"TEXCOORD_0":230
 					},
 					"indices":231,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -3981,7 +4102,7 @@
 						"TEXCOORD_0":234
 					},
 					"indices":235,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -3995,7 +4116,7 @@
 						"TEXCOORD_0":238
 					},
 					"indices":239,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -4009,7 +4130,7 @@
 						"TEXCOORD_0":242
 					},
 					"indices":243,
-					"material":19
+					"material":22
 				}
 			]
 		},
@@ -4023,7 +4144,7 @@
 						"TEXCOORD_0":246
 					},
 					"indices":209,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -4037,7 +4158,7 @@
 						"TEXCOORD_0":249
 					},
 					"indices":213,
-					"material":17
+					"material":20
 				},
 				{
 					"attributes":{
@@ -4046,7 +4167,7 @@
 						"TEXCOORD_0":252
 					},
 					"indices":217,
-					"material":17
+					"material":20
 				}
 			]
 		},
@@ -4060,7 +4181,7 @@
 						"TEXCOORD_0":255
 					},
 					"indices":221,
-					"material":18
+					"material":21
 				}
 			]
 		},
@@ -4097,7 +4218,7 @@
 						"TEXCOORD_0":264
 					},
 					"indices":231,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -4111,7 +4232,7 @@
 						"TEXCOORD_0":267
 					},
 					"indices":235,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -4125,7 +4246,7 @@
 						"TEXCOORD_0":270
 					},
 					"indices":239,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -4139,7 +4260,7 @@
 						"TEXCOORD_0":273
 					},
 					"indices":243,
-					"material":19
+					"material":23
 				}
 			]
 		},
@@ -4167,7 +4288,7 @@
 						"TEXCOORD_0":280
 					},
 					"indices":281,
-					"material":20
+					"material":24
 				}
 			]
 		},
@@ -4222,7 +4343,7 @@
 						"NORMAL":295
 					},
 					"indices":296,
-					"material":9
+					"material":10
 				}
 			]
 		},
@@ -4235,7 +4356,7 @@
 						"NORMAL":298
 					},
 					"indices":299,
-					"material":21
+					"material":25
 				}
 			]
 		},
@@ -4262,7 +4383,7 @@
 						"TEXCOORD_0":305
 					},
 					"indices":306,
-					"material":22
+					"material":26
 				}
 			]
 		},
@@ -4303,7 +4424,7 @@
 						"NORMAL":316
 					},
 					"indices":317,
-					"material":23
+					"material":27
 				}
 			]
 		},
@@ -4317,7 +4438,7 @@
 						"TEXCOORD_0":320
 					},
 					"indices":321,
-					"material":21
+					"material":25
 				}
 			]
 		},
@@ -4345,7 +4466,7 @@
 						"TEXCOORD_0":328
 					},
 					"indices":329,
-					"material":6
+					"material":28
 				}
 			]
 		},
@@ -4373,7 +4494,7 @@
 						"TEXCOORD_0":336
 					},
 					"indices":337,
-					"material":24
+					"material":18
 				}
 			]
 		},
@@ -4399,7 +4520,7 @@
 						"NORMAL":342
 					},
 					"indices":343,
-					"material":9
+					"material":25
 				}
 			]
 		},
@@ -4412,7 +4533,7 @@
 						"NORMAL":345
 					},
 					"indices":346,
-					"material":25
+					"material":29
 				}
 			]
 		},
@@ -4438,7 +4559,7 @@
 						"NORMAL":351
 					},
 					"indices":352,
-					"material":13
+					"material":16
 				}
 			]
 		},
@@ -4477,7 +4598,7 @@
 						"NORMAL":360
 					},
 					"indices":361,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -4503,7 +4624,7 @@
 						"NORMAL":366
 					},
 					"indices":367,
-					"material":9
+					"material":25
 				}
 			]
 		},
@@ -4529,7 +4650,7 @@
 						"NORMAL":372
 					},
 					"indices":373,
-					"material":21
+					"material":25
 				}
 			]
 		},
@@ -4542,7 +4663,7 @@
 						"NORMAL":375
 					},
 					"indices":376,
-					"material":9
+					"material":18
 				}
 			]
 		},
@@ -4555,7 +4676,7 @@
 						"NORMAL":378
 					},
 					"indices":379,
-					"material":21
+					"material":25
 				}
 			]
 		},
@@ -4568,7 +4689,7 @@
 						"NORMAL":381
 					},
 					"indices":382,
-					"material":9
+					"material":18
 				}
 			]
 		},
@@ -4581,7 +4702,7 @@
 						"NORMAL":384
 					},
 					"indices":385,
-					"material":9
+					"material":10
 				}
 			]
 		},
@@ -4595,7 +4716,7 @@
 						"TEXCOORD_0":388
 					},
 					"indices":389,
-					"material":26
+					"material":30
 				}
 			]
 		},
@@ -4609,7 +4730,7 @@
 						"TEXCOORD_0":392
 					},
 					"indices":393,
-					"material":6
+					"material":31
 				}
 			]
 		},
@@ -4623,7 +4744,7 @@
 						"TEXCOORD_0":396
 					},
 					"indices":397,
-					"material":13
+					"material":32
 				}
 			]
 		},
@@ -4637,7 +4758,7 @@
 						"TEXCOORD_0":400
 					},
 					"indices":401,
-					"material":27
+					"material":33
 				}
 			]
 		},
@@ -4651,7 +4772,7 @@
 						"TEXCOORD_0":404
 					},
 					"indices":405,
-					"material":28
+					"material":34
 				}
 			]
 		},
@@ -4665,7 +4786,7 @@
 						"TEXCOORD_0":408
 					},
 					"indices":409,
-					"material":29
+					"material":35
 				}
 			]
 		},
@@ -4679,7 +4800,7 @@
 						"TEXCOORD_0":412
 					},
 					"indices":413,
-					"material":30
+					"material":36
 				}
 			]
 		},
@@ -4693,7 +4814,7 @@
 						"TEXCOORD_0":416
 					},
 					"indices":417,
-					"material":31
+					"material":37
 				}
 			]
 		},
@@ -4706,7 +4827,7 @@
 						"NORMAL":419
 					},
 					"indices":420,
-					"material":6
+					"material":38
 				}
 			]
 		},
@@ -4719,7 +4840,7 @@
 						"NORMAL":422
 					},
 					"indices":423,
-					"material":6
+					"material":39
 				}
 			]
 		},
@@ -4733,7 +4854,7 @@
 						"TEXCOORD_0":426
 					},
 					"indices":427,
-					"material":32
+					"material":40
 				}
 			]
 		},
@@ -4747,7 +4868,7 @@
 						"TEXCOORD_0":430
 					},
 					"indices":431,
-					"material":33
+					"material":41
 				},
 				{
 					"attributes":{
@@ -4756,7 +4877,7 @@
 						"TEXCOORD_0":434
 					},
 					"indices":435,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -4770,7 +4891,7 @@
 						"TEXCOORD_0":438
 					},
 					"indices":439,
-					"material":34
+					"material":42
 				}
 			]
 		},
@@ -4784,7 +4905,7 @@
 						"TEXCOORD_0":442
 					},
 					"indices":443,
-					"material":6
+					"material":43
 				}
 			]
 		},
@@ -4798,7 +4919,7 @@
 						"TEXCOORD_0":446
 					},
 					"indices":447,
-					"material":22
+					"material":26
 				}
 			]
 		},
@@ -4812,7 +4933,7 @@
 						"TEXCOORD_0":450
 					},
 					"indices":451,
-					"material":33
+					"material":41
 				}
 			]
 		},
@@ -4826,7 +4947,7 @@
 						"TEXCOORD_0":454
 					},
 					"indices":455,
-					"material":22
+					"material":26
 				}
 			]
 		},
@@ -4840,7 +4961,7 @@
 						"TEXCOORD_0":458
 					},
 					"indices":459,
-					"material":22
+					"material":26
 				}
 			]
 		},
@@ -4854,7 +4975,7 @@
 						"TEXCOORD_0":462
 					},
 					"indices":463,
-					"material":22
+					"material":26
 				}
 			]
 		},
@@ -4868,7 +4989,7 @@
 						"TEXCOORD_0":466
 					},
 					"indices":467,
-					"material":35
+					"material":44
 				}
 			]
 		},
@@ -4882,7 +5003,7 @@
 						"TEXCOORD_0":470
 					},
 					"indices":471,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -4896,7 +5017,7 @@
 						"TEXCOORD_0":474
 					},
 					"indices":475,
-					"material":22
+					"material":26
 				}
 			]
 		},
@@ -4910,7 +5031,7 @@
 						"TEXCOORD_0":478
 					},
 					"indices":479,
-					"material":22
+					"material":26
 				}
 			]
 		},
@@ -4952,7 +5073,7 @@
 						"TEXCOORD_0":490
 					},
 					"indices":491,
-					"material":10
+					"material":11
 				}
 			]
 		},
@@ -4969,19 +5090,6 @@
 					"material":3
 				}
 			]
-		}
-	],
-	"textures":[
-		{
-			"sampler":0,
-			"source":0
-		}
-	],
-	"images":[
-		{
-			"mimeType":"image/jpeg",
-			"name":"3d66Model-1410836-files-1",
-			"uri":"3d66Model-1410836-files-1.jpg"
 		}
 	],
 	"accessors":[
@@ -8272,14 +8380,14 @@
 			"componentType":5126,
 			"count":200,
 			"max":[
-				1940.78759765625,
-				1012.89501953125,
-				532.9014892578125
+				1938.6326904296875,
+				1010.003662109375,
+				1719.054931640625
 			],
 			"min":[
-				1827.177978515625,
-				967.70751953125,
-				-532.90087890625
+				1825.0230712890625,
+				964.816162109375,
+				653.2525634765625
 			],
 			"type":"VEC3"
 		},
@@ -12256,14 +12364,6 @@
 			"byteLength":15720,
 			"byteOffset":7874580,
 			"target":34962
-		}
-	],
-	"samplers":[
-		{
-			"magFilter":9729,
-			"minFilter":9987,
-			"wrapS":33071,
-			"wrapT":33071
 		}
 	],
 	"buffers":[
