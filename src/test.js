@@ -19,3 +19,8 @@ document.getElementById('fileInput').addEventListener('change', function() {
     }
   
     });
+
+    <button id="flip-h" disableds>水平翻转图层</button>
+    <button id="flip-v" disabled>垂直翻转图层</button>
+
+    <button id="toJson" disabled>导出画布json信息</button>

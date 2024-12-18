@@ -3,8 +3,12 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { DecalGeometry } from 'three/addons/geometries/DecalGeometry.js';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+
 import { createLight } from "./js/light"
 import { ground } from "./js/ground"
+import { setupCanvasDrawing } from "./js/canvas"
+
+
 import Stats from 'three/addons/libs/stats.module.js';
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 
@@ -18,7 +22,7 @@ let raycaster;
 let mouseHelper;
 let selectedIndex;
 let index = 0;
-
+let canvastexture = [];
 //const dracoLoader = new DRACOLoader();
 const intersection = {
   intersects: false,
@@ -51,6 +55,7 @@ let selectpart = {
 const editmode = {
   decalsedit: false,
   coloredit: true,
+  opencanvas: false,
 };
 
 const selectorContainer = document.getElementById('selector');
@@ -102,12 +107,14 @@ const decals = [];
 let decalsIdCounter = 0;
 
 
+
 inti();
+
 
 function inti() { 
   createLight(scene);
   ground(scene);
-
+  setupCanvasDrawing();
   scene.environment = new RGBELoader().load('hdr1.hdr');
   scene.environment.mapping = THREE.EquirectangularReflectionMapping;
   scene.environment.colorSpace = THREE.SRGBColorSpace;
@@ -201,10 +208,10 @@ function inti() {
         name: select.object.name,     
         color:select.object.material.color,
         roughness: select.object.material.roughness,         
-        metalness: select.object.material.metalness,                                 
+        metalness: select.object.material.metalness,  
       };
 
-      console.log('selectpart', selectpart);
+      console.log('selectpart', select.object);
       } catch (error) {
         console.log('Not defined');
       }
@@ -328,11 +335,12 @@ function updateGUI() {
   colerFolder4.setValue(select.object.name);
   colerFolder3.setValue(select.object.material.color.getHex().toString(16));
   colerFolder5.setValue(select.object.material.roughness );
-  colerFolder6.setValue(select.object.material.metalness);} catch (error) {
+  colerFolder6.setValue(select.object.material.metalness);
+  canvasFolder2.setValue(select.object.name);} catch (error) {
       }
 }
 const colerFolder2 = colerFolder.addFolder('Part Modify');
-const colerFolder4 = colerFolder2.add(selectpart, 'name');
+const colerFolder4 = colerFolder2.add(selectpart, 'name')
 const colerFolder3 = colerFolder2.addColor(selectpart, 'color').onChange( function(value) {
   car.children.forEach(child => {
     if (child.name === colerFolder4.getValue()) {
@@ -353,7 +361,6 @@ const colerFolder6 = colerFolder2.add(selectpart,'metalness', 0, 1).onChange( fu
 });
 
 
-
 const decalsFolder = gui.addFolder('Decals System 贴纸系统 (demo)');
 decalsFolder.close();
 decalsFolder.add(editmode, 'decalsedit').onChange(function(value) {
@@ -365,8 +372,30 @@ decalsFolder.add(editmode, 'decalsedit').onChange(function(value) {
       document.getElementById("selector").style.display = 'none';  
       document.getElementById("decalslist").style.display = 'none';
       document.querySelector(".options-container").style.display = 'none'; 
+
     }  
 });
+
+const canvasFolder = gui.addFolder('Canvas System (demo)');
+canvasFolder.close();
+canvasFolder.add(editmode, 'opencanvas').onChange(function(value) {
+  if(editmode.opencanvas === true){
+    document.getElementById("drawing-canvas").style.display = 'flex';
+    canvastexture = new THREE.CanvasTexture(document.getElementById("canvas133"));
+    canvastexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    car.children.forEach(child => {
+      if (child.name.includes('H1')||child.name.includes('K1')||child.name.includes('K2')) {
+        child.material.color.set('white');
+        child.material.map = canvastexture;
+        child.material.map.minFilter = THREE.LinearFilter
+        child.material.map.colorSpace = 'srgb'
+        //console.log("map",child.material.map)
+      }})
+    }else{  
+      document.getElementById("drawing-canvas").style.display = 'none';
+    }  
+});
+
 decalsFolder.add(decalsparams,'Scale', 0, 2);
 
   gui.open();
@@ -561,6 +590,7 @@ document.getElementById('fileInput').addEventListener('change', function() {
 var render = function () {
   //camera.updateProjectionMatrix();
   requestAnimationFrame( render );
+  canvastexture.needsUpdate = true;
   stats.update();
   renderer.render(scene, camera);
 };
